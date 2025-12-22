@@ -1,0 +1,191 @@
+.sizeGuide {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.sizeGuide h2 {
+  text-align: center;
+  font-size: var(--largest-text);
+}
+
+.sizeGuideP {
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.MeasureSection {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.MeasureTitleDiv {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.MeasureTitleDiv h3 {
+  font-size: 40px;
+}
+.rulerIcon {
+  font-size: 20px;
+}
+
+.shapeDiv {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+.shapeDiv h4 {
+  font-size: var(--large-text);
+}
+.shapeCards {
+  padding: 17px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+.shapeCards p {
+  color: var(--text-muted);
+  /* color: ; */
+}
+
+.womenSizeChartDiv,
+.menSizeChartDiv {
+  margin-top: 40px;
+}
+.womenSizeChartDiv h3,
+.menSizeChartDiv h3 {
+  font-size: 40px;
+}
+.womenSizeTable,
+.menSizeTable {
+  margin-top: 20px;
+}
+
+.customTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: solid 1px #e5e7eb;
+  border-radius: 10px;
+}
+
+.customTable th,
+.customTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb; /* horizontal lines only */
+}
+
+/* Optional: header styling */
+.customTable th {
+  font-weight: 600;
+  background-color: #f9fafb;
+}
+
+/* Remove ALL borders if you want zero grid lines */
+/*
+.customTable th,
+.customTable td {
+  border: none;
+}
+*/
+
+.fitTipsDiv {
+  background-color: rgba(229, 231, 235, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+.fitTipsDiv h3 {
+  font-size: 40px;
+}
+.fitTipsContainer {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.fitTipsCard {
+  width: 100%;
+}
+.fitTipsCard h4 {
+  font-size: var(--large-text);
+}
+.fitTipsCard p {
+  color: var(--text-muted);
+}
+
+@media screen and (max-width: 938px) {
+  .MeasureSection {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 793px) {
+  .shapeDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: center;
+    place-content: center;
+    /* place-items: center; */
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 624px) {
+  .shapeDiv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .fitTipsContainer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 528px) {
+  .shapeDiv {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    align-items: center;
+    place-content: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .fitTipsDiv {
+    background-color: rgba(229, 231, 235, 0.5);
+    padding: 20px;
+  }
+  .customTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: solid 1px #e5e7eb;
+    border-radius: 10px;
+    overflow-x: auto;
+  }
+  .MeasureSection {
+    width: 90%;
+  }
+  .sizeGuide h2 {
+    text-align: center;
+    font-size: var(--largest-text);
+    padding: 10px;
+  }
+
+  .sizeGuideP {
+    color: var(--text-muted);
+    text-align: center;
+    padding: 10px;
+  }
+}

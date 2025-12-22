@@ -1,0 +1,93 @@
+.handleSubmitDiv {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 30px;
+  animation: fadeUp 0.4s ease-out;
+  /* border: solid 1px red; */
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.loginHeader {
+  text-align: center;
+}
+.loginDescription {
+  text-align: center;
+}
+.inputFieldsDiv,
+.passwordDiv {
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 40%;
+  border: solid 1px  rgba(100, 116, 139, 0.5);
+  /* border: solid 1px red; */
+}
+
+.loginInputFields {
+  width: 90%;
+  /* border: solid 1px blue; */
+  outline: none;
+  border: none;
+}
+.passwordDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.handleSubmitDiv p {
+  color: var(--text-muted);
+}
+.loginBtn {
+  width: 30%;
+  /* width: 600px; */
+}
+.signUpNavLink {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 965px) {
+  .inputFieldsDiv,
+  .passwordDiv {
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 70%;
+  }
+  .loginBtn {
+    width: 70%;
+    /* width: 600px; */
+  }
+}
+@media screen and (max-width: 740px) {
+  .inputFieldsDiv,
+  .passwordDiv {
+    padding: 10px 20px;
+    border-radius: 10px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 668px) {
+  .handleSubmitDiv {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 518px) {
+  .handleSubmitDiv {
+    width: 95%;
+  }
+}
+

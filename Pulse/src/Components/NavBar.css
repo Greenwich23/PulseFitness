@@ -1,0 +1,127 @@
+.navPage {
+  /* width: 100vw; */
+  border-bottom: solid 0.2px rgba(100, 116, 139, 0.2);
+  top: 0;
+  position: sticky;
+  z-index: 1000;
+  background-color: white;
+}
+
+.navBar {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  padding: 10px 0;
+  /* border: solid 1px red; */
+  margin: 0 auto;
+}
+
+.logo {
+  color: black;
+  text-decoration: none;
+  font-size: var(--medium-text);
+}
+
+.navLinksDiv {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navLinks,
+.nav-links {
+  color: grey;
+  text-decoration: none;
+}
+.navLinks:hover {
+  color: black;
+}
+.nav-links:hover {
+  color: black;
+}
+.navLinks.active {
+  color: black;
+  /* font-weight: 600; */
+}
+
+.navEssentials {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  /* border: solid 1px blue; */
+}
+.profileIcon {
+  color: black;
+  display: flex;
+  align-items: center;
+}
+.barsIcon {
+  display: none;
+}
+.navEssentialsLinks {
+  /* border: solid 1px red; */
+}
+.navLinksDropDown {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* gap: 5px; */
+  align-items: flex-start;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.4s ease-in-out;
+  background-color: white;
+  /* border: solid 1px red; */
+}
+.navLinksDropDown.open {
+  max-height: 220px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cartDiv {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* border: solid 1px red; */
+  /* width: fit-content; */
+}
+.cartIcon {
+  font-size: var(--small-text);
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.cartCount {
+  position: absolute;
+  bottom: 7px;
+  left: 17px;
+  /* border: solid 1px red; */
+  font-size: 13px;
+}
+
+@media screen and (max-width: 938px) {
+  .navBar {
+    width: 90%;
+  }
+  .navLinksDropDown {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 631px) {
+  .navLinks {
+    color: grey;
+    text-decoration: none;
+    display: none;
+  }
+  .barsIcon {
+    display: flex;
+    font-size: var(--medium-text);
+  }
+}

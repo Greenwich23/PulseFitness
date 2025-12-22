@@ -1,0 +1,238 @@
+.aboutPage {
+  width: 100%;
+  margin-top: 50px;
+}
+.aboutPageFirstection {
+  width: 80%;
+  margin: 0 auto;
+}
+.aboutPageFirstection h2 {
+  color: black;
+  font-size: var(--largest-text);
+  text-align: center;
+}
+.aboutOurStoryDiv {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  /* border: solid 1px red; */
+  margin-top: 70px;
+  width: 100%;
+}
+.aboutPageText {
+  width: 50%;
+}
+.aboutPageText h3 {
+  color: black;
+  font-size: 40px;
+}
+.aboutOurStoryDesc {
+  color: var(--text-muted);
+  margin-top: 20px;
+}
+.aboutUsImage {
+  width: 50%;
+  border-radius: 10px;
+}
+.aboutUsImage img {
+  border-radius: 10px;
+  object-fit: cover;
+  width: 100%;
+  height: 500px;
+}
+.aboutPageSecondSection {
+  width: 100%;
+  margin-top: 70px;
+  background-color: #f8f9fa;
+  padding: 60px 10px;
+}
+.aboutPageSecondSection h3 {
+  text-align: center;
+  font-size: 50px;
+  color: black;
+}
+.aboutPageSecondSectionDesc {
+  color: var(--text-muted);
+  text-align: center;
+  width: 45%;
+  margin: 0 auto;
+}
+.aboutUsCardsDiv {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  /* border: solid 1px red; */
+  margin: 0 auto;
+  margin-top: 40px;
+}
+.aboutUsCard {
+  width: 100%;
+  padding: 22px;
+  background-color: white;
+  border: solid 1px #e5e7eb;
+  /* border: solid 1px red; */
+  border-radius: 10px;
+}
+.aboutUsCardIconDiv {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aboutUsCardIcon {
+  color: white;
+  font-size: var(--medium-text);
+}
+.aboutUsCard h4 {
+  font-size: var(--medium-text);
+  margin-top: 15px;
+}
+.aboutUsCard p {
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+.aboutPageThirdSection {
+  margin-top: 30px;
+  padding: 30px 10px;
+  width: 80%;
+  margin: 0 auto;
+}
+.aboutUsImagesContainer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  margin-top: 30px;
+  /* border: solid 1px red; */
+}
+.aboutUsImagesDiv {
+  width: 50%;
+  /* border: solid 1px red; */
+}
+.aboutUsImages {
+  width: 100%;
+  object-fit: cover;
+  height: 400px;
+  border-radius: 15px;
+}
+.pulsePromiseDiv {
+  margin-top: 100px;
+  width: 100%;
+}
+.pulsePromiseDiv h2 {
+  font-size: 40px;
+  color: black;
+  text-align: center;
+}
+.pulsePromiseDiv p {
+  color: var(--text-muted);
+  text-align: center;
+}
+.pulsePromiseCardsDiv {
+  display: flex;
+  align-items: flex-start;
+  /* flex-wrap: wrap; */
+  gap: 25px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.pulsePromiseCards {
+  padding: 5px;
+  width: 50%;
+}
+.pulsePromiseCards h3 {
+  color: black;
+  font-size: var(--medium-text);
+  text-align: center;
+}
+.pulsePromiseCards p {
+  color: var(--text-muted);
+  /* text-align: center; */
+}
+
+@media screen and (max-width: 1100px) {
+  .aboutUsCardsDiv {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    /* place-items: center;
+    align-items: center; */
+  }
+}
+@media screen and (max-width: 938px) {
+  .aboutPageFirstection {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .aboutUsCardsDiv {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 90%;
+    /* place-items: center;
+    align-items: center; */
+  }
+  .aboutPageSecondSectionDesc {
+    width: 70%;
+  }
+  .aboutPageThirdSection {
+    margin-top: 30px;
+    padding: 30px 10px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 838px) {
+  .aboutUsCardsDiv {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 90%;
+  }
+}
+@media screen and (max-width: 711px) {
+  .aboutOurStoryDiv {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+  }
+  .aboutPageText {
+    width: 100%;
+  }
+  .aboutPageText h3 {
+    text-align: center;
+  }
+  .aboutUsImage {
+    width: 100%;
+  }
+  .pulsePromiseCardsDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .pulsePromiseCards {
+    padding: 5px;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 546px) {
+  .aboutPageSecondSectionDesc {
+    width: 100%;
+  }
+  .aboutUsCardsDiv {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    width: 95%;
+  }
+  .aboutUsImagesContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .aboutUsImagesDiv {
+    width: 100%;
+    /* border: solid 1px red; */
+  }
+}

@@ -1,0 +1,7 @@
+.seperator {
+  width: 50px;       /* length of the line */
+  height: 2px;       /* thickness of the line */
+  background-color: #ccc;  /* line color */
+  margin: 10px 0;    /* spacing above and below */
+  border-radius: 1px; /* optional: slightly rounded edges */
+}

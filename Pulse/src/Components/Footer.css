@@ -1,0 +1,118 @@
+.footerContainer {
+  width: 100%;
+  /* border: solid 1px #ff0000; */
+  margin-top: 20px;
+  padding: 50px 0;
+}
+.footerDiv {
+  width: 80%;
+  margin: 0 auto;
+}
+.footerLinksContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: flex-start;
+  justify-content: space-between;
+  /* border: solid 1px red; */
+  width: 100%;
+  margin: 0 auto;
+  gap: 35px;
+}
+.footerLinkDiv {
+  width: 100%;
+  /* border: solid 1px red; */
+}
+.footerLinkDiv h2 {
+  font-size: 40px;
+  color: black;
+}
+.footerLinkDiv p {
+  color: var(--text-muted);
+}
+
+.footerLinkDiv h3 {
+  color: black;
+}
+.footerSocialLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.footerSocialLinksIcons {
+  color: black;
+  font-size: var(--small-text);
+}
+.shopLinksDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+.shopLinks {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.shopLinks:hover {
+  color: black;
+}
+hr {
+  margin-top: 25px;
+}
+.footerCompany {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+  /* border: solid 1px red; */
+}
+.footerCompanyLinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.pulseRights {
+  color: var(--text-muted);
+}
+@media screen and (max-width: 938px) {
+  .footerDiv {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 723px) {
+  .footerLinksContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+  .footerLinkDiv {
+    width: 100%;
+    /* border: solid 1px red; */
+  }
+}
+
+@media screen and (max-width: 562px) {
+  .footerCompany {
+    display: flex;
+    flex-direction: column;
+    /* border: solid 1px red; */
+  }
+  .footerCompanyLinks {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .footerLinksContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
+  }
+}

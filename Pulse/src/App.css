@@ -1,0 +1,75 @@
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #020617;
+  /* --text-secondary : #64748B; */
+  --text-muted: #64748b;
+  --border-color: #e5e7eb;
+  --largest-text: 60px;
+  --large-text: 30px;
+  --medium-text: 23px;
+  --small-text: 18px;
+  --separator: rgba(100, 116, 139, 0.2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+.arrowUp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: "0 4px 6px rgba(0,0,0,0.3)";
+}
+
+/* Toast progress bar */
+.react-hot-toast > div::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px; /* thickness of the line */
+  width: 100%;
+  background: #22c55e; /* color of the line */
+  animation: toast-progress linear forwards;
+  animation-duration: inherit; /* matches toast duration */
+}
+
+hr {
+  background-color: (100, 116, 139, 0.2);
+}
+
+@keyframes toast-progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

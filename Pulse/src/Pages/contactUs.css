@@ -1,0 +1,183 @@
+.contactUsPage {
+  width: 100%;
+  /* border: solid 1px red; */
+  margin-top: 40px;
+}
+
+.contactUsDiv {
+  /* border-bottom: solid 0.2px rgba(100, 116, 139, 0.2); */
+  width: 80%;
+  margin: 0 auto;
+}
+.contactUsDiv h1 {
+  font-size: var(--largest-text);
+  color: black;
+  text-align: center;
+}
+.contactUsDiv p {
+  color: var(--text-muted);
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+}
+.customHr {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 100%;
+  color: #f8f9fa;
+}
+.contactUsInfoDiv {
+  display: flex;
+  gap: 55px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.contactUsInfo {
+  width: 50%;
+  padding: 10px;
+}
+.contactUsInfo h2 {
+  font-size: 40px;
+  color: black;
+}
+.contactUsInfo p {
+  color: var(--text-muted);
+}
+.contactUsInfoDesc {
+  margin-top: 20px;
+}
+.contactUsInfoCard {
+  display: flex;
+  align-items: flex-start;
+  /* align-items: center; */
+  gap: 20px;
+  /* border: solid 1px red; */
+  margin-top: 20px;
+}
+.iconsDiv {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  /* border: solid 1px red; */
+  background-color: rgba(100, 116, 139, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.contactUsIcons {
+  font-size: var(--small-text);
+  color: black;
+}
+.contactUsInfoText {
+  /* border: solid 1px red; */
+}
+.contactUsInfoText h3 {
+  color: black;
+  font-size: var(--large-text);
+}
+.contactUsInfoText p {
+  color: var(--text-muted);
+}
+.contactUsInfoWorkTime {
+  margin-top: 40px;
+}
+.contactUsInfoWorkTime h3 {
+  color: black;
+  font-size: var(--large-text);
+}
+.hoursDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.contactUsFormDiv {
+  width: 50%;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+}
+.contactUsFormDiv h2 {
+  font-size: 40px;
+}
+.contactUsFormFields {
+  margin-top: 20px;
+  display: block;
+}
+.contactUsFormFields label {
+  color: black;
+  font-size: var(--small-text);
+}
+.contactUsFormFields input {
+  padding: 16px;
+  background-color: white;
+  outline: none;
+  border-radius: 8px;
+  width: 100%;
+  border: solid 1px #ccc;
+  margin-top: 10px;
+}
+select {
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-muted);
+}
+.contactMessageDiv {
+  width: 100%;
+  height: 200px;
+  resize: none;
+  padding: 10px;
+  font-family: inherit;
+  display: block;
+}
+.sendMessageBtn {
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  color: white;
+  background-color: black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.sendMessageIcon {
+  font-size: var(--small-text);
+}
+
+@media screen and (max-width: 938px) {
+  .contactUsDiv {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .contactUsInfoDiv {
+    display: flex;
+    gap: 55px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width: 839px) {
+  .contactUsInfoDiv {
+    display: flex;
+    flex-direction: column;
+  }
+  .contactUsInfo {
+    width: 100%;
+    padding: 10px;
+  }
+  .contactUsFormDiv {
+    width: 100%;
+  }
+}

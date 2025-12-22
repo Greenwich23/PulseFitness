@@ -1,0 +1,294 @@
+.profilePage {
+  width: 100%;
+  margin: 45px 0;
+  margin-bottom: 45px;
+}
+.profilePageHeader {
+  font-size: var(--largest-text);
+  color: black;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.profileSection {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+.profileSideBarDiv {
+  width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 1px var(--separator);
+}
+.profileDetailsDiv,
+.profileDetailsDivLogOut {
+  padding: 15px;
+  background-color: transparent;
+  border-bottom: solid 1px var(--separator);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: context-menu;
+  transition: all 0.2s ease-in-out;
+}
+.profileDetailsDiv:hover {
+  background-color: var(--separator);
+  color: black;
+}
+.profileDetailsDivLogOut {
+  color: #dc2626;
+}
+.profileDetailsDivLogOut:hover {
+  background-color: #fef2f2;
+}
+.logoutIcon {
+  color: red;
+}
+.profileDetailsIcon {
+  color: var(--text-muted);
+}
+.profileDetailsDiv p {
+  color: var(--text-muted);
+}
+.profileDetailsDiv.active {
+  background-color: var(--separator);
+  color: black;
+}
+.profileDetailsDiv.active .profileDetailsIcon {
+  color: black;
+}
+.profileDetailsDiv.active p {
+  color: black;
+}
+.profileMiniPagesDiv {
+  width: 70%;
+  border-radius: 10px;
+  border: solid 1px var(--separator);
+  padding: 15px;
+}
+.profileOverview {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+.profileOverviewPfp {
+  width: 85px;
+  height: 85px;
+  background-color: black;
+  border-radius: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profileOverviewPfp p {
+  color: white;
+  font-size: var(--medium-text);
+}
+.profileOverviewDetails h3 {
+  font-size: var(--large-text);
+}
+.profileOverviewDetails p {
+  color: var(--text-muted);
+}
+.profileUserInfo {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profileUserInfo p {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+.profileUserInfo h5 {
+  font-size: 16px;
+}
+
+.profileOrdersDiv {
+  width: 100%;
+}
+.zeroOrdersDiv {
+  width: 100%;
+  margin: 0 auto;
+}
+.zeroOrdersDiv p {
+  margin-top: 10px;
+}
+.zeroOrdersDiv a {
+  color: var(--text-muted);
+}
+.zeroOrdersDiv a:hover {
+  color: black;
+}
+.profileOrdersDiv h3 {
+  font-size: var(--large-text);
+  margin-top: 10px;
+}
+.profileOrderCard {
+  padding: 10px;
+  border: solid 1px var(--separator);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.profileOrderCard:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+.profileOrderCardFlex {
+  display: flex;
+  justify-content: space-between;
+}
+.profileOrderId {
+  color: black;
+  font-size: var(--small-text);
+}
+.orderStatusTextDiv {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.orderStatusText {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: lightgreen;
+  color: green;
+}
+.orderStatusPrice {
+  color: black;
+}
+.orderDate {
+  color: var(--text-muted);
+}
+.orderProductImagesDiv {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+.orderProductImage {
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+.orderDeliveryDiv {
+  margin-top: 15px;
+}
+.orderDeliveryDiv p {
+  color: var(--text-muted);
+}
+.viewOrderDetails {
+  margin-top: 20px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: black;
+  cursor: pointer;
+}
+.viewOrderDetailsClicked {
+}
+.viewOrderDetailsProduct {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+.viewMoreOrderName {
+  color: black;
+}
+.viewMoreOrderProductDetails {
+  color: var(--text-muted);
+}
+.viewMoreOrderProductPrice {
+  color: black;
+}
+.viewMoreOrderTotalPricesDiv {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.viewMoreOrderTotalPricesDiv p {
+  color: var(--text-muted);
+}
+.viewMoreOrderTotalPricesDiv span {
+  color: black;
+}
+
+.accountSettingsSection {
+  padding: 15px;
+}
+.accountSettingsSection h3 {
+  margin-top: 10px;
+}
+.passwordDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 1px var(--separator);
+  padding: 15px 10px;
+  /* margin-top: 15px; */
+}
+.accountSettingsSection label {
+  display: block;
+  margin-top: 15px;
+}
+.passwordDiv input {
+  border: none;
+  outline: none;
+  width: 90%;
+}
+
+@media screen and (max-width: 938px) {
+  .profileSection {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .profileSection {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .profileSideBarDiv {
+    width: 100%;
+  }
+  .profileMiniPagesDiv {
+    width: 100%;
+    border-radius: 10px;
+    border: solid 1px var(--separator);
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .profileOrderCardFlex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .orderStatusTextDiv {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+  }
+  .orderProductImagesDiv {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+  }
+  .profileOverviewPfp {
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50px;
+  }
+  .profileOverviewPfp p {
+    color: white;
+    font-size: var(--small-text);
+  }
+}

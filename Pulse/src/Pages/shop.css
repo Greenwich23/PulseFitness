@@ -1,0 +1,187 @@
+.generalShop {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 55px;
+}
+
+.generalShop h3 {
+  font-size: var(--largest-text);
+  text-align: center;
+}
+.generalShopDesc {
+  color: var(--text-muted);
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  /* font-size: 12px; */
+}
+.searchProducts {
+  width: 100%;
+  border: solid 1px var(--text-muted);
+  padding: 10px;
+  border-radius: 6px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.searchProducts input {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+.searchProducts:focus-within {
+  border: solid 1px #020617;
+}
+.showingProducts {
+  margin-top: 20px;
+}
+.filtersSection {
+  margin-top: 25px;
+}
+hr {
+  width: 100%;
+}
+.filtersDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: solid 1px red; */
+  margin-top: 20px;
+}
+.filtersDiv1 {
+  display: flex;
+  gap: 30px;
+}
+.filterLogo {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  gap: 5px;
+}
+.filtersDropDownDiv {
+  padding: 6px;
+  border: solid 1px var(--text-muted);
+}
+.filtersMenuButton {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  cursor: pointer;
+}
+.filtersDropDown {
+  position: absolute; /* float dropdown */
+  top: 100%; /* place below button */
+  left: 0;
+  margin-top: 8px;
+  width: 180px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  outline: none;
+  border: solid 0.5px grey;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--foreground);
+  z-index: 10000; /* make sure it’s on top */
+  /* cursor: pointer; */
+}
+.filterOptions {
+  background-color: transparent;
+  /* color: var(--foreground); */
+  border-radius: 6px;
+  padding: 3px 8px;
+  text-align: left;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.filterOptions:hover {
+  color: white;
+  background-color: #0f172a;
+}
+.sortDiv {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.noProductsMatchDiv {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.clearFilters {
+  cursor: pointer;
+}
+.noProductsMatchDiv 
+.productShopSection {
+  margin-top: 20px;
+}
+.productsShopCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 938px) {
+  .generalShop {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 55px;
+  }
+  .productsShopCards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .filtersDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .sortDiv {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .productsShopCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 572px) {
+  .generalShop h3 {
+    font-size: 50px;
+    text-align: center;
+  }
+  .productsShopCards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .filtersDiv1 {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  .filtersMenuButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  /* .filterLogo {
+    text-align: center;
+  } */
+  .sortDiv {
+    flex-direction: column;
+  }
+}
