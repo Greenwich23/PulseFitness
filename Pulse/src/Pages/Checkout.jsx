@@ -59,7 +59,11 @@ export default function Checkout() {
     const res = await fetch("/.netlify/functions/create-checkout-session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ cart }),
+      body: JSON.stringify({
+        cart,
+        success_url: `${window.location.origin}/success`, // ADD THIS
+        cancel_url: `${window.location.origin}/checkout`, // ADD THIS
+      }),
     });
 
     const data = await res.json();
