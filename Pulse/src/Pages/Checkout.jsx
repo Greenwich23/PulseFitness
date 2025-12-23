@@ -240,7 +240,7 @@ export default function Checkout() {
                 </button>
                 <FaArrowRight />
               </div>
-              <NavLink className="continueShopBtn" to={"/women-shop"}>
+              <NavLink className="continueShopBtn" to={"/women"}>
                 Continue Shopping
               </NavLink>
               {/* <StyledButton>Proceed to Checkout</StyledButton> */}

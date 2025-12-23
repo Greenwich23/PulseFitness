@@ -14,7 +14,7 @@ export default function ContactUs() {
     emailjs
       .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_ID,
         e.target,
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
