@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/authContext";
 import { useCartContext } from "../Context/cartContext";
 import "./success.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState} from "react";
 import StyledButton from "./Buttons";
 // import { EmailJSResponseStatus } from "emailjs-com";
 import emailjs from "emailjs-com";

@@ -6,6 +6,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import StyledButton from "../Components/Buttons";
 import emailjs from "emailjs-com";
 import toast from "react-hot-toast";
+import { useState, useEffect} from "react";
 
 export default function ContactUs() {
   const [emailJsReady, setEmailJsReady] = useState(false); // ✅ Add state to track readiness
