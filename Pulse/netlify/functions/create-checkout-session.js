@@ -27,8 +27,8 @@ export async function handler(event) {
 
       line_items: lineItems,
 
-      success_url: success_url || `${process.env.URL}/success`,
-      cancel_url: cancel_url || `${process.env.URL}/checkout`,
+      success_url: `${process.env.URL}/success`,
+      cancel_url: `${process.env.URL}/checkout`,
     });
 
     return {
