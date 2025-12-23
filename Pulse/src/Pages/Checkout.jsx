@@ -56,18 +56,28 @@ export default function Checkout() {
       return;
     }
 
+    // Get the current URL safely
+    const baseUrl =
+      window.location.origin || "https://pulsewears.netlify.app";
+
     const res = await fetch("/.netlify/functions/create-checkout-session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         cart,
-        success_url: `${window.location.origin}/success`, // ADD THIS
-        cancel_url: `${window.location.origin}/checkout`, // ADD THIS
+        success_url: `${baseUrl}/success`,
+        cancel_url: `${baseUrl}/checkout`,
       }),
     });
 
     const data = await res.json();
-    window.location.href = data?.url;
+
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      console.error("No URL returned from checkout:", data);
+      toast.error("Checkout failed. Please try again.");
+    }
   };
 
   const { data: productsData } = useProducts();
