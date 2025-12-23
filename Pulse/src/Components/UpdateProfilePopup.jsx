@@ -1,5 +1,5 @@
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
-import "./UpdateprofilePopUp.css";
+import "./UpdateProfilePopUp.css";
 import { FaX } from "react-icons/fa6";
 import StyledButton from "./Buttons";
 import { useState } from "react";
