@@ -6,51 +6,71 @@ import { FaLocationDot } from "react-icons/fa6";
 import StyledButton from "../Components/Buttons";
 import emailjs from "emailjs-com";
 import toast from "react-hot-toast";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 
 export default function ContactUs() {
-  const [emailJsReady, setEmailJsReady] = useState(false); // ✅ Add state to track readiness
+  const [emailJsReady, setEmailJsReady] = useState(false);
 
-  // ✅ Initialize EmailJS when component loads
+  // ✅ FIXED: For emailjs-com, initialization is SYNCHRONOUS
   useEffect(() => {
-    // Initialize with your PUBLIC KEY
-    emailjs
-      .init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
-      .then(() => {
-        console.log("EmailJS initialized for Contact Form");
-        setEmailJsReady(true); // Mark as ready
-      })
-      .catch((err) => {
-        console.error("Failed to initialize EmailJS in Contact:", err);
-      });
+    // Debug: Check if environment variable exists
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    console.log("Public Key loaded:", publicKey ? "YES" : "NO");
+
+    if (!publicKey) {
+      console.error("❌ VITE_EMAILJS_PUBLIC_KEY is missing!");
+      toast.error(
+        "Email service configuration error. Please refresh the page."
+      );
+      return;
+    }
+
+    try {
+      // For emailjs-com, .init() does NOT return a promise
+      emailjs.init(publicKey);
+      console.log("✅ EmailJS initialized (emailjs-com)");
+      setEmailJsReady(true);
+    } catch (error) {
+      console.error("❌ EmailJS initialization failed:", error);
+      toast.error("Failed to initialize email service");
+    }
   }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // ✅ CRITICAL: Don't try to send if not initialized
     if (!emailJsReady) {
-      toast.error("Form is not ready yet. Please try again in a moment.");
+      toast.error("Please wait, email service is still initializing...");
+      return;
+    }
+
+    // ✅ FIXED: Check all required environment variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("Missing EmailJS environment variables:");
+      console.log("Service ID:", serviceId ? "Present" : "Missing");
+      console.log("Template ID:", templateId ? "Present" : "Missing");
+      console.log("Public Key:", publicKey ? "Present" : "Missing");
+
+      toast.error(
+        "Email service configuration incomplete. Please contact support."
+      );
       return;
     }
 
     emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_ID,
-        e.target,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // This is still needed here for the older library
-      )
-      .then(
-        () => {
-          toast.success("Message sent successfully 📧");
-          e.target.reset();
-        },
-        (error) => {
-          console.error("EmailJS error:", error);
-          toast.error("Failed to send message ❌");
-        }
-      );
+      .sendForm(serviceId, templateId, e.target, publicKey)
+      .then(() => {
+        toast.success("Message sent successfully 📧");
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS send error:", error);
+        toast.error("Failed to send message ❌");
+      });
   };
 
   return (

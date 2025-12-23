@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/authContext";
 import { useCartContext } from "../Context/cartContext";
 import "./success.css";
-import { useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import StyledButton from "./Buttons";
 // import { EmailJSResponseStatus } from "emailjs-com";
 import emailjs from "emailjs-com";
@@ -12,58 +12,75 @@ export default function Success() {
   const { cart, clearCart } = useCartContext();
   const { user, updateOrders } = useAuth();
   const navigate = useNavigate();
-  const [emailJsReady, setEmailJsReady] = useState(false); // Track initialization
+  const [emailJsReady, setEmailJsReady] = useState(false);
 
+  // ✅ FIXED: For emailjs-com, initialization is SYNCHRONOUS
   useEffect(() => {
-    // Use your PUBLIC KEY from EmailJS dashboard
-    emailjs
-      .init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
-      .then(() => {
-        console.log("EmailJS initialized");
-        setEmailJsReady(true);
-      })
-      .catch((err) => {
-        console.error("Failed to initialize EmailJS:", err);
-      });
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    console.log("Success.jsx - Public Key loaded:", publicKey ? "YES" : "NO");
+
+    if (!publicKey) {
+      console.error("❌ VITE_EMAILJS_PUBLIC_KEY is missing in Success.jsx!");
+      return;
+    }
+
+    try {
+      // For emailjs-com, .init() does NOT return a promise
+      emailjs.init(publicKey);
+      console.log("✅ EmailJS initialized for Success page (emailjs-com)");
+      setEmailJsReady(true);
+    } catch (error) {
+      console.error("❌ EmailJS initialization failed in Success:", error);
+    }
   }, []); // Run only once on component mount
 
   const sendOrderEmail = (order) => {
-    // const orderItemsText = order.items
-    //   .map(
-    //     (item) =>
-    //       `${item.name} (${item.quantity}x) - $${item.price * item.quantity}`
-    //   )
-    //   .join("\n");
+    // ✅ FIXED: Check if EmailJS is ready
+    if (!emailJsReady) {
+      console.error("EmailJS not ready yet when trying to send order email");
+      return;
+    }
+
+    // ✅ FIXED: Check all required environment variables
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("Missing EmailJS environment variables in Success.jsx:");
+      console.log("Service ID:", serviceId ? "Present" : "Missing");
+      console.log("Template ID:", templateId ? "Present" : "Missing");
+      console.log("Public Key:", publicKey ? "Present" : "Missing");
+      return;
+    }
 
     emailjs
       .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         {
           order_id: order?.id,
           name: order?.name,
           email: user?.email,
-
           orders: order?.items?.map((item) => ({
             name: item.name,
             units: item.quantity,
             price: item.price.toFixed(2),
             image_url: item.image,
           })),
-
           cost: {
             shipping: order?.shipping.toFixed(2),
             tax: "0.00",
             total: order?.total.toFixed(2),
           },
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        publicKey
       )
       .then(() => {
-        console.log("Order email sent successfully");
+        console.log("✅ Order email sent successfully");
       })
       .catch((err) => {
-        console.error("Failed to send order email:", err);
+        console.error("❌ Failed to send order email:", err);
       });
   };
 
