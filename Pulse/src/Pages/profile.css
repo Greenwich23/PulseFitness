@@ -246,6 +246,12 @@
   .profileSection {
     width: 90%;
   }
+  .orderProductImagesDiv {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+  }
 }
 
 @media screen and (max-width: 700px) {
@@ -274,12 +280,6 @@
     display: flex;
     align-items: center;
     margin: 15px 0;
-  }
-  .orderProductImagesDiv {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
-    overflow-x: scroll;
   }
   .profileOverviewPfp {
     width: 50px;

@@ -64,7 +64,7 @@ export default function HomePage() {
             function meets fashion.
           </div>
           <div className=" homeHeroButtonContainer">
-            <NavLink className="homeHeroButton">
+            <NavLink className="homeHeroButton" to={'/women'}>
               Shop Collection
               <FaArrowRightLong className="homeHeroButtonIcon" />
             </NavLink>

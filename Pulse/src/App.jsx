@@ -14,6 +14,7 @@ import ProductPage from "./Pages/Product";
 import Accessories from "./Pages/Accessories";
 import SizeGuide from "./Pages/SizeGuide";
 import Success from "./Components/Success";
+import ScrollToTop from "./Components/ScrollToTop";
 // import { FaArrowCircleUp } from "react-icons/fa";
 // import { useEffect, useState } from "react";
 // import ScrollToTop from "./Components/ScrollToTop";
