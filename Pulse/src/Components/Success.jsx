@@ -12,6 +12,20 @@ export default function Success() {
   const { cart, clearCart } = useCartContext();
   const { user, updateOrders } = useAuth();
   const navigate = useNavigate();
+  const [emailJsReady, setEmailJsReady] = useState(false); // Track initialization
+
+  useEffect(() => {
+    // Use your PUBLIC KEY from EmailJS dashboard
+    emailjs
+      .init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+      .then(() => {
+        console.log("EmailJS initialized");
+        setEmailJsReady(true);
+      })
+      .catch((err) => {
+        console.error("Failed to initialize EmailJS:", err);
+      });
+  }, []); // Run only once on component mount
 
   const sendOrderEmail = (order) => {
     // const orderItemsText = order.items
@@ -23,8 +37,8 @@ export default function Success() {
 
     emailjs
       .send(
-       import.meta.env.VITE_EMAILJS_SERVICE_ID,
-       import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           order_id: order?.id,
           name: order?.name,
@@ -134,7 +148,7 @@ export default function Success() {
       // If cart is already empty, just mark as processed
       orderProcessed.current = true;
     }
-  }, [user, cart, clearCart, updateOrders]);
+  }, [user, cart, clearCart, updateOrders, emailJsReady]);
 
   return (
     <div className="successPage">

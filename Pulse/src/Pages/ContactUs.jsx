@@ -8,15 +8,37 @@ import emailjs from "emailjs-com";
 import toast from "react-hot-toast";
 
 export default function ContactUs() {
+  const [emailJsReady, setEmailJsReady] = useState(false); // ✅ Add state to track readiness
+
+  // ✅ Initialize EmailJS when component loads
+  useEffect(() => {
+    // Initialize with your PUBLIC KEY
+    emailjs
+      .init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+      .then(() => {
+        console.log("EmailJS initialized for Contact Form");
+        setEmailJsReady(true); // Mark as ready
+      })
+      .catch((err) => {
+        console.error("Failed to initialize EmailJS in Contact:", err);
+      });
+  }, []);
+
   const sendEmail = (e) => {
     e.preventDefault();
+
+    // ✅ CRITICAL: Don't try to send if not initialized
+    if (!emailJsReady) {
+      toast.error("Form is not ready yet. Please try again in a moment.");
+      return;
+    }
 
     emailjs
       .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_ID,
         e.target,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY // This is still needed here for the older library
       )
       .then(
         () => {
