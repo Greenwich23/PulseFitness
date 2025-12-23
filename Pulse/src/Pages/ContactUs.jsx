@@ -9,55 +9,28 @@ import toast from "react-hot-toast";
 import { useState, useEffect } from "react";
 
 export default function ContactUs() {
-  const [emailJsReady, setEmailJsReady] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
-  // ✅ FIXED: For emailjs-com, initialization is SYNCHRONOUS
-  useEffect(() => {
-    // Debug: Check if environment variable exists
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    // Initialize EmailJS right before sending
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-    console.log("Public Key loaded:", publicKey ? "YES" : "NO");
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_ID;
 
-    if (!publicKey) {
-      console.error("❌ VITE_EMAILJS_PUBLIC_KEY is missing!");
-      toast.error(
-        "Email service configuration error. Please refresh the page."
-      );
+    if (!publicKey || !serviceId || !templateId) {
+      toast.error("Email service configuration error");
+      setIsSending(false);
       return;
     }
 
     try {
-      // For emailjs-com, .init() does NOT return a promise
       emailjs.init(publicKey);
-      console.log("✅ EmailJS initialized (emailjs-com)");
-      setEmailJsReady(true);
     } catch (error) {
-      console.error("❌ EmailJS initialization failed:", error);
-      toast.error("Failed to initialize email service");
-    }
-  }, []);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    if (!emailJsReady) {
-      toast.error("Please wait, email service is still initializing...");
-      return;
-    }
-
-    // ✅ FIXED: Check all required environment variables
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      console.error("Missing EmailJS environment variables:");
-      console.log("Service ID:", serviceId ? "Present" : "Missing");
-      console.log("Template ID:", templateId ? "Present" : "Missing");
-      console.log("Public Key:", publicKey ? "Present" : "Missing");
-
-      toast.error(
-        "Email service configuration incomplete. Please contact support."
-      );
+      console.error("EmailJS init failed:", error);
+      setIsSending(false);
       return;
     }
 
@@ -68,8 +41,11 @@ export default function ContactUs() {
         e.target.reset();
       })
       .catch((error) => {
-        console.error("EmailJS send error:", error);
+        console.error("EmailJS error:", error);
         toast.error("Failed to send message ❌");
+      })
+      .finally(() => {
+        setIsSending(false);
       });
   };
 
