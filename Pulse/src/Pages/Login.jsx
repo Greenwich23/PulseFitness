@@ -7,7 +7,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import toast from "react-hot-toast";
 
 export default function Login() {
-  const { login, user} = useAuth();
+  const { login, user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -20,9 +20,17 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!password.match(passwordRegex)) {
+      setError(
+        "Password must contain:\n• At least one uppercase letter\n• At least one lowercase letter\n• At least one digit (0-9)\n• At least one special character (@$!%*?&)\n• Minimum 8 characters"
+      );
+      return;
+    }
     try {
       login(email, password);
-      toast.success(`Welcome back 👋`)
+      toast.success(`Welcome back 👋`);
       navigate(redirectTo);
     } catch (err) {
       setError(err.message);
@@ -49,7 +57,9 @@ export default function Login() {
       <div className={styles.passwordDiv}>
         <input
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
           placeholder="Password*"
           type={eyeOpen == true ? "text" : "password"}
           className={styles.loginInputFields}
@@ -67,6 +77,7 @@ export default function Login() {
           />
         )}
       </div>
+      <NavLink className={styles.forgotPasswordBtn} to={'/forgot-password'}>Forgot Password?</NavLink>
 
       <StyledButton className={styles.loginBtn}>Log in</StyledButton>
       <p>

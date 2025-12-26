@@ -8,6 +8,7 @@ const StyledButton = styled.button`
   font-weight: 500;
   cursor: pointer;
   transition: all 0.25s ease;
+  margin: 0 auto;
   margin-top: 15px;
 
   /* Default style */

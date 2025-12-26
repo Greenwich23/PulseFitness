@@ -37,8 +37,8 @@ export const Products = [
   {
     id: 2,
     name: "Performance Running Socks",
-    category: "Men",
-    subcategory: "Footwear",
+    category: "Accessories",
+    subcategory: "Socks",
     price: 129,
     qty: 120,
     image:
@@ -151,7 +151,7 @@ export const Products = [
     ],
     colors: ["Black", "Gray", "Navy"],
     sizes: ["S", "M", "L", "XL"],
-    collection: "Athleisure 2025",
+    collection: "Core Collection",
     featured: false,
     description:
       "Versatile joggers that transition seamlessly from workout to casual wear with tapered fit and stretch fabric.",
@@ -355,7 +355,7 @@ export const Products = [
     ],
     colors: ["Black", "White", "Gray"],
     sizes: ["S", "M", "L", "XL"],
-    collection: "Performance",
+    collection: "Casual Collection",
     featured: false,
     description:
       "Athletic compression shirt for muscle support and moisture management during intense workouts.",
@@ -457,7 +457,7 @@ export const Products = [
     ],
     colors: ["Black", "Blue", "Maroon"],
     sizes: ["XS", "S", "M", "L"],
-    collection: "Running 2025",
+    collection: "All-Season",
     featured: false,
     description:
       "Compression running tights with side pockets and reflective details for night running safety.",
@@ -491,7 +491,7 @@ export const Products = [
     ],
     colors: ["White", "Black", "Red", "Green"],
     sizes: ["S", "M", "L", "XL", "XXL"],
-    collection: "Basic Essentials",
+    collection: "Core Collection",
     featured: false,
     description:
       "Classic crew neck t-shirt with moisture-wicking technology for everyday wear or workouts.",
@@ -627,7 +627,7 @@ export const Products = [
     ],
     colors: ["Black", "Gray", "Navy"],
     sizes: ["S", "M", "L", "XL"],
-    collection: "Essentials",
+    collection: "Core Collection",
     featured: false,
     description:
       "Breathable boxer briefs with anti-odor technology and supportive pouch design.",
@@ -695,7 +695,7 @@ export const Products = [
     ],
     colors: ["Olive Green", "Black", "Khaki"],
     sizes: ["30", "32", "34", "36", "38"],
-    collection: "Utility 2025",
+    collection: "Core Collection",
     featured: true,
     description:
       "Functional cargo joggers with multiple pockets and durable fabric for all-day comfort.",
@@ -763,7 +763,7 @@ export const Products = [
     ],
     colors: ["Royal Blue", "Black", "Red"],
     sizes: ["S", "M", "L", "XL"],
-    collection: "Athleisure 2025",
+    collection: "All-Season",
     featured: true,
     description:
       "High-performance tracksuit with moisture-wicking fabric and ergonomic design for athletes.",
@@ -797,7 +797,7 @@ export const Products = [
     ],
     colors: ["White", "Gray", "Black"],
     sizes: ["S", "M", "L", "XL"],
-    collection: "Winter Essentials",
+    collection: "Winter 2025",
     featured: false,
     description:
       "Full thermal underwear set for extreme cold weather, featuring top and bottom.",
@@ -865,7 +865,7 @@ export const Products = [
     ],
     colors: ["Burgundy", "Navy", "Gray"],
     sizes: ["S", "M", "L", "XL"],
-    collection: "Casual 2025",
+    collection: "Fall 2025",
     featured: false,
     description:
       "Classic henley long sleeve with three-button placket and soft cotton blend fabric.",
@@ -933,7 +933,7 @@ export const Products = [
     ],
     colors: ["Gray", "Black", "Royal Blue"],
     sizes: ["S", "M", "L", "XL", "XXL"],
-    collection: "Training 2025",
+    collection: "Fall 2025",
     featured: false,
     description:
       "Lightweight training tracksuit designed for gym sessions and athletic performance.",
@@ -967,7 +967,7 @@ export const Products = [
     ],
     colors: ["Yellow", "Black", "Blue"],
     sizes: ["M", "L", "XL", "XXL"],
-    collection: "All-Weather",
+    collection: "Fall 2025",
     featured: true,
     description:
       "Fully waterproof rain jacket with sealed seams and adjustable features for storm protection.",
@@ -1001,7 +1001,7 @@ export const Products = [
     ],
     colors: ["Black", "Navy", "Red"],
     sizes: ["S", "M", "L", "XL"],
-    collection: "Performance",
+    collection: "Casual Collection",
     featured: true,
     description:
       "Compression-fit long sleeve shirt for muscle support and temperature regulation.",
@@ -1035,7 +1035,7 @@ export const Products = [
     ],
     colors: ["Black", "Gray", "Navy"],
     sizes: ["S", "M", "L", "XL"],
-    collection: "Techwear 2025",
+    collection: "Streetwear 2025",
     featured: true,
     description:
       "Technical joggers with water-resistant fabric and multiple utility pockets.",
@@ -1069,7 +1069,7 @@ export const Products = [
     ],
     colors: ["Assorted", "Black", "White"],
     sizes: ["S", "M", "L", "XL"],
-    collection: "Daily Basics",
+    collection: "Core Collection",
     featured: false,
     description:
       "Comfortable cotton briefs with breathable fabric and soft elastic waistband.",
@@ -1702,14 +1702,14 @@ export const Products = [
     id: 51,
     name: "Stainless Steel Infuser Bottle",
     category: "Accessories",
-    subcategory: "Bottles",
+    subcategory: "Tops",
     price: 38,
     qty: 125,
     image:
       "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&auto=format&fit=crop",
     images: [
-      "https://cdn.shopify.com/s/files/1/1367/5207/files/images-MetalInsulatedBottle1LGSOatWhiteI1C2B_WC1V_0017_V2_1920x.jpg?v=1763562465",
-      "https://cdn.shopify.com/s/files/1/1367/5207/files/images-MetalInsulatedBottle1LGSOatWhiteI1C2B_WC1V_0016_V2_1920x.jpg?v=1763562465",
+      "https://cdn.shopify.com/s/files/1/1367/5207/files/VitalSeamlessTightT-ShirtGsHeavyBlueMarlB9A6X-UCW7-0234_a9566a5d-9976-4ff3-9bd4-8d19b969747d_1920x.jpg?v=1722504912",
+      "https://cdn.shopify.com/s/files/1/1367/5207/files/VitalSeamlessTightT-ShirtGsHeavyBlueMarlB9A6X-UCW7-0250_4607225c-514c-4ea7-853f-e326aabe4bc5_1920x.jpg?v=1722504912",
     ],
     colors: ["Matte Black", "Brushed Steel", "Copper"],
     sizes: ["500ml", "750ml"],
@@ -1729,6 +1729,40 @@ export const Products = [
       "Clean infuser after each use",
       "Do not use abrasive cleaners",
       "Dry all parts thoroughly",
+    ],
+  },
+  {
+    id: 52,
+    name: "Vital Tight T-shirt",
+    category: "Women",
+    subcategory: "Tops",
+    price: 48,
+    qty: 45,
+    image:
+      "https://cdn.shopify.com/s/files/1/1367/5207/files/AdaptCamoSeamlessLongSleeveTopENG-L-A0240GSAsphaltGreyGSBlackB3B2L-GC8N1148-0074_f5fc4841-1b11-4f32-956e-8817f0538bb9_1920x.jpg?v=1742894753",
+    images: [
+      "https://cdn.shopify.com/s/files/1/1367/5207/files/VitalSeamlessTightT-ShirtGsHeavyBlueMarlB9A6X-UCW7-0234_a9566a5d-9976-4ff3-9bd4-8d19b969747d_1920x.jpg?v=1722504912",
+      "https://cdn.shopify.com/s/files/1/1367/5207/files/VitalSeamlessTightT-ShirtGsHeavyBlueMarlB9A6X-UCW7-0250_4607225c-514c-4ea7-853f-e326aabe4bc5_1920x.jpg?v=1722504912",
+    ],
+    colors: ["Black", "Cream", "Maroon"],
+    sizes: ["S", "M", "L", "XL"],
+    collection: "Winter 2025",
+    featured: true,
+    description:
+      "Thermal short sleeve compression top with moisture-wicking technology for cold weather workouts.",
+    details: [
+      "Thermal insulation",
+      "Moisture-wicking fabric",
+      "Raglan sleeves",
+      "Flatlock seams",
+      "Tagless neckline",
+    ],
+    materials: "88% Polyester, 12% Spandex",
+    careInstructions: [
+      "Machine wash cold",
+      "Do not bleach",
+      "Tumble dry low",
+      "Iron on low heat if needed",
     ],
   },
 ];

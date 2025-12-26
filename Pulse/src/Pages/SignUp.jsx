@@ -32,6 +32,15 @@ export default function SignUp() {
       return;
     }
 
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!password.match(passwordRegex)) {
+      setError(
+        "Password must contain:\n• At least one uppercase letter\n• At least one lowercase letter\n• At least one digit (0-9)\n• At least one special character (@$!%*?&)\n• Minimum 8 characters"
+      );
+      return;
+    }
+
     try {
       signup(name, email, password, phoneNumber, memberSince);
       navigate("/login");
@@ -82,17 +91,26 @@ export default function SignUp() {
         <input
           type="text"
           value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
+          onChange={(e) => {
+            const value = e.target.value;
+            // Only allow numbers
+            if (/^\d*$/.test(value)) {
+              setPhoneNumber(value);
+            }
+          }}
           placeholder="Phone Number*"
           className={styles.loginInputFields}
           required
+          id="numberInput"
         />
       </div>
 
       <div className={styles.passwordDiv}>
         <input
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
           placeholder="Password*"
           type={eyeOpen == true ? "text" : "password"}
           className={styles.loginInputFields}

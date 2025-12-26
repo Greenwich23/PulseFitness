@@ -35,6 +35,9 @@
   color: grey;
   text-decoration: none;
 }
+.nav-links {
+  margin-top: 10px;
+}
 .navLinks:hover {
   color: black;
 }
@@ -114,7 +117,7 @@
   }
 }
 
-@media screen and (max-width: 631px) {
+@media screen and (max-width: 764px) {
   .navLinks {
     color: grey;
     text-decoration: none;

@@ -17,6 +17,8 @@ import StyledButton from "../Components/Buttons";
 import toast from "react-hot-toast";
 import { useCartContext } from "../Context/cartContext";
 import EditProfileModal from "../Components/UpdateProfilePopup";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function Profile() {
   const [sideBarPage, setSideBarPage] = useState("Profile Overview");
@@ -66,6 +68,10 @@ export default function Profile() {
     );
   }, [user]);
 
+  useEffect(() => {
+    Aos.init({ duration: 1000, once: true, delay: 3 }); // 1000ms = 1s
+  }, []);
+
   const getInitials = (name) => {
     if (typeof name !== "string") return "";
 
@@ -77,8 +83,27 @@ export default function Profile() {
       .join("");
   };
 
+  // const validateFormsError = () => {
+  //   if(newPassword == "") {
+  //     setError("")
+  //   }
+
+  //   const passwordRegex =
+  //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  //   if (!passwordRegex.test(newPassword)) {
+  //     setError(
+  //       "Password must contain:\n• At least one uppercase letter\n• At least one lowercase letter\n• At least one digit (0-9)\n• At least one special character (@$!%*?&)\n• Minimum 8 characters"
+  //     );
+  //     console.log("Password doesn't match regex:", newPassword);
+  //   } else {
+  //     setError("");
+  //     console.log("Password is valid!");
+  //   }
+  // };
+
   const handleChangePassword = () => {
-    setError("");
+    // setError("");
 
     if (!currentPassword || !newPassword || !confirmPassword) {
       setError("All fields are required");
@@ -87,6 +112,15 @@ export default function Profile() {
 
     if (newPassword !== confirmPassword) {
       setError("New passwords do not match");
+      return;
+    }
+
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if (!newPassword.match(passwordRegex)) {
+      setError(
+        "Password must contain:\n• At least one uppercase letter\n• At least one lowercase letter\n• At least one digit (0-9)\n• At least one special character (@$!%*?&)\n• Minimum 8 characters"
+      );
       return;
     }
 
@@ -99,6 +133,7 @@ export default function Profile() {
       setCurrentPassword("");
       setNewPassword("");
       setConfirmPassword("");
+      setError("");
     } catch (err) {
       setError(err.message);
     }
@@ -112,9 +147,8 @@ export default function Profile() {
   console.log(user?.orders?.length);
   console.log(user?.orders);
 
-
   return (
-    <div className={"profilePage"}>
+    <div className={"profilePage"} data-aos="fade-up">
       <h2 className="profilePageHeader">My Account</h2>
       <hr />
       <div className={"profileSection"}>
@@ -236,7 +270,8 @@ export default function Profile() {
                   </div>
                   <div className="orderDeliveryDiv">
                     <p>
-                      Delivery Date : Between {orderItem.deliveryDate} to {orderItem.deliveryDate2}
+                      Delivery Date : Between {orderItem.deliveryDate} to{" "}
+                      {orderItem.deliveryDate2}
                     </p>
                   </div>
                   <div
@@ -245,9 +280,9 @@ export default function Profile() {
                   >
                     <p>View Details</p>
                     {expandedOrderId == orderItem.id ? (
-                      <IoIosArrowForward />
-                    ) : (
                       <IoIosArrowDown />
+                    ) : (
+                      <IoIosArrowForward />
                     )}
                   </div>
                   {expandedOrderId == orderItem.id && (
@@ -304,7 +339,9 @@ export default function Profile() {
               <div className="passwordDiv">
                 <input
                   value={currentPassword}
-                  onChange={(e) => setCurrentPassword(e.target.value)}
+                  onChange={(e) => {
+                    setCurrentPassword(e.target.value);
+                  }}
                   type={eyeCurrentPasswordOpen == true ? "text" : "password"}
                   className={"loginInputFields"}
                 />
@@ -328,7 +365,9 @@ export default function Profile() {
               <div className={"passwordDiv"}>
                 <input
                   value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
+                  onChange={(e) => {
+                    setNewPassword(e.target.value);
+                  }}
                   type={eyeNewPasswordOpen == true ? "text" : "password"}
                   className={"loginInputFields"}
                 />

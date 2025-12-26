@@ -74,6 +74,7 @@
   padding-top: 40px;
   width: 80%;
   margin: 0 auto;
+  position: relative;
 }
 .featuredCollectionText {
   color: var(--text-muted);
@@ -93,23 +94,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-}
-.swiperSlide {
   position: relative;
-  overflow: hidden;
-  width: 25%;
-}
-
-.swiperSlide .swiper-button-next,
-.swiperSlide .swiper-button-prev {
-  color: #ee6c4d;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: solid 1px red;
-  margin-bottom: 100px;
 }
 
 .categorySection {
@@ -118,6 +103,7 @@
   gap: 30px;
   width: 80%;
   margin: 0 auto;
+  margin-top: 30px;
 }
 .categoryDiv {
   text-decoration: none;
@@ -321,5 +307,103 @@
     width: 100%;
     bottom: 30px;
     left: 10px;
+  }
+}
+/* Embla Carousel */
+/* ============================= */
+/* PRODUCT CAROUSEL (REACT MULTI) */
+/* ============================= */
+
+.product-carousel {
+  padding: 20px 0;
+  position: relative;
+}
+
+/* spacing between cards */
+.product-carousel-item {
+  padding: 0 12px;
+  position: relative;
+}
+
+/* ============================= */
+/* CAROUSEL ARROWS */
+/* ============================= */
+
+.react-multiple-carousel__arrow {
+  background: #020617;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  z-index: 5;
+  margin-bottom: 120px;
+}
+
+.react-multiple-carousel__arrow:hover {
+  background: #111827;
+}
+
+.react-multiple-carousel__arrow::before {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* Position arrows perfectly centered */
+.react-multiple-carousel__arrow--left {
+  /* left: 100px; */
+  /* margin-right: -100px; */
+  margin-left: -50px;
+}
+
+.react-multiple-carousel__arrow--right {
+  /* right: 100px; */
+  margin-right: -50px;
+}
+
+/* Carousel dots */
+.react-multiple-carousel__dot-list {
+  bottom: -100px;
+  top: 100px;
+  /* adjust position */
+}
+
+.react-multiple-carousel__dot {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+  margin-bottom: -200px;
+  border: solid 1px red;
+}
+
+.react-multiple-carousel__dot--active {
+  background: #020617;
+}
+
+/* ============================= */
+/* MOBILE REFINEMENTS */
+/* ============================= */
+
+@media (max-width: 1216px) {
+  .react-multiple-carousel__arrow--left {
+    margin-left: -30px;
+  }
+
+  .react-multiple-carousel__arrow--right {
+    margin-right: -30px;
+  }
+}
+@media (max-width: 700px) {
+  .react-multiple-carousel__arrow--left {
+    margin-left: -15px;
+  }
+
+  .react-multiple-carousel__arrow--right {
+    margin-right: -15px;
+  }
+}
+@media (max-width: 640px) {
+  .react-multiple-carousel__arrow {
+    display: none;
   }
 }

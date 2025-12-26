@@ -15,6 +15,8 @@ import Accessories from "./Pages/Accessories";
 import SizeGuide from "./Pages/SizeGuide";
 import Success from "./Components/Success";
 import ScrollToTop from "./Components/ScrollToTop";
+import ForgotPassword from "./Pages/Forgotpassword";
+import ResetPassword from "./Pages/ResetPassword";
 // import { FaArrowCircleUp } from "react-icons/fa";
 // import { useEffect, useState } from "react";
 // import ScrollToTop from "./Components/ScrollToTop";
@@ -37,6 +39,8 @@ function App() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/:category/:id" element={<ProductPage />} />
       <Route path="/success" element={<Success/>}/>
+      <Route path="/forgot-password" element={<ForgotPassword/>} />
+      <Route path="/reset-password" element={<ResetPassword/>} />
     </Routes>
   );
 }

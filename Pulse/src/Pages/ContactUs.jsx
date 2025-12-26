@@ -7,6 +7,8 @@ import StyledButton from "../Components/Buttons";
 import emailjs from "emailjs-com";
 import toast from "react-hot-toast";
 import { useState, useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function ContactUs() {
   const [isSending, setIsSending] = useState(false);
@@ -49,8 +51,12 @@ export default function ContactUs() {
       });
   };
 
+  useEffect(() => {
+    Aos.init({ duration: 1000, once: true, delay: 3 }); // 1000ms = 1s
+  }, []);
+
   return (
-    <div className="contactUsPage">
+    <div className="contactUsPage" data-aos="fade-up">
       <div className="contactUsDiv">
         <h1>Get in Touch</h1>
         <p>
@@ -154,9 +160,9 @@ export default function ContactUs() {
           {/* <StyledButton>
               <BiMessageRounded /> Send Message
             </StyledButton> */}
-          <button className="sendMessageBtn" type="submit">
-            <BiMessageRounded className="sendMessageIcon" /> Send Message
-          </button>
+          <StyledButton className="sendMessageBtn" type="submit" disabled={isSending}>
+            <BiMessageRounded className="sendMessageIcon" /> {isSending == true ? "Sending..." : "Send Message" }
+          </StyledButton>
         </form>
       </div>
     </div>

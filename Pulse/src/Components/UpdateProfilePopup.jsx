@@ -24,7 +24,7 @@ export default function EditProfileModal({ open, onClose }) {
     try {
       updateProfile({ name, phoneNumber });
       toast.success("Profile updated successfully ✅");
-      onClose()
+      onClose();
     } catch (err) {
       setError(err.message);
     }
@@ -56,10 +56,17 @@ export default function EditProfileModal({ open, onClose }) {
             <input
               type="text"
               value={phoneNumber}
-              onChange={(e) => setNewPhoneNumber(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                // Only allow numbers
+                if (/^\d*$/.test(value)) {
+                  setNewPhoneNumber(value);
+                }
+              }}
+              placeholder="New Phone Number*"
               required
             />
-            <p style={{color: "red", marginTop : "10px"}}>{error}</p>
+            <p style={{ color: "red", marginTop: "10px" }}>{error}</p>
             <div className="editProfilePopupBtn">
               <StyledButton type="submit">Edit Profile Info</StyledButton>
             </div>

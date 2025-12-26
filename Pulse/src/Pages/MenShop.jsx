@@ -15,14 +15,19 @@ const categories = [
   "Sets",
   "Tops",
   "Outerwear",
-  "Footwear",
+  "Underwear",
   "Tracksuits",
 ];
 const collections = [
   "All Collections",
   "Core Collection",
   "Spring 2025",
-  "Yoga Series",
+  "Summer 2025",
+  "Winter 2025",
+  "Fall 2025",
+  "Streetwear 2025",
+  "All-Season", 
+  "Casual Collection"
 ];
 const sortQueries = [
   "Name A-Z",
