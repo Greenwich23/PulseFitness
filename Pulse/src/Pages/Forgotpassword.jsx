@@ -56,7 +56,7 @@ export default function ForgotPassword() {
     try {
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_PASSWORD_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_PASSWORD_TEMPLTE_ID,
+        import.meta.env.VITE_EMAILJS_PASSWORD_TEMPLATE_ID,
         {
           email: user.email,
           name: user.name || "User",

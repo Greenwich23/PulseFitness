@@ -41,6 +41,12 @@
   outline: none;
   border: none;
 }
+.forgotPasswordBtn {
+  color: var(--text-muted);
+}
+.forgotPasswordBtn:hover {
+  color: black;
+}
 .passwordDiv {
   display: flex;
   align-items: center;

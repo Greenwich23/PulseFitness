@@ -86,7 +86,7 @@ export default function Login() {
           Sign up
         </NavLink>
       </p>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: "red", textAlign: "center"}}>{error}</p>}
     </form>
   );
 }

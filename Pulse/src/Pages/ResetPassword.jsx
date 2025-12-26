@@ -5,6 +5,7 @@ import StyledButton from "../Components/Buttons";
 import "./resetPassword.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 export default function ResetPassword() {
   const [searchParams] = useSearchParams();
@@ -15,6 +16,8 @@ export default function ResetPassword() {
 
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [eyePasswordOpen, setEyePasswordOpen] = useState(false);
+  const [eyeConfirmPasswordOpen, setEyeConfirmPasswordOpen] = useState(false);
 
   useEffect(() => {
     Aos.init({ duration: 1000, once: true, delay: 3 }); // 1000ms = 1s
@@ -81,24 +84,49 @@ export default function ResetPassword() {
       <form onSubmit={handleResetPassword} className="resetPasswordForm">
         <div className="inputDiv">
           <input
-            type="password"
             placeholder="New password"
-            value={password}
+            type={eyePasswordOpen == true ? "text" : "password"}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          {eyePasswordOpen == true ? (
+            <FaEyeSlash
+              className={"eyeIcon"}
+              onClick={() => setEyePasswordOpen((prevValue) => !prevValue)}
+            />
+          ) : (
+            <FaEye
+              className={"eyeIcon"}
+              onClick={() => setEyePasswordOpen((prevValue) => !prevValue)}
+            />
+          )}
         </div>
         <div className="inputDiv">
           <input
-            type="password"
+            type={eyeConfirmPasswordOpen == true ? "text" : "password"}
             placeholder="Confirm new password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
+          {eyeConfirmPasswordOpen == true ? (
+            <FaEyeSlash
+              className={"eyeIcon"}
+              onClick={() =>
+                setEyeConfirmPasswordOpen((prevValue) => !prevValue)
+              }
+            />
+          ) : (
+            <FaEye
+              className={"eyeIcon"}
+              onClick={() =>
+                setEyeConfirmPasswordOpen((prevValue) => !prevValue)
+              }
+            />
+          )}
         </div>
 
-        <p style={{ color: "red", marginTop : "20px"}}>{error}</p>
+        <p style={{ color: "red", marginTop: "20px" }}>{error}</p>
 
         <StyledButton type="submit">Reset Password</StyledButton>
       </form>

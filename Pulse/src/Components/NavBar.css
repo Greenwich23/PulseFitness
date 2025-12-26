@@ -79,10 +79,9 @@
   transform: translateY(-10px);
   transition: all 0.4s ease-in-out;
   background-color: white;
-  /* border: solid 1px red; */
 }
 .navLinksDropDown.open {
-  max-height: 220px;
+  max-height: 290px;
   opacity: 1;
   transform: translateY(0);
 }
